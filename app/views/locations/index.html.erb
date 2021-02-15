@@ -1,0 +1,82 @@
+<h1>hi 2021-01-19</h1>
+
+<h2><%= Time.now %></h2>
+<div class="divcenter">
+<h1 align="center"><%= link_to "Add location", new_location_url %>
+</h1>
+
+<table id="list" border="1px solid" align="center" style="width: 200px height: 30px">
+
+<thead>
+  <tr>
+    <th>Location</th>
+    <th>Name</th>
+    <th>Distance</th>
+    <th>Date</th>
+  </tr>
+</thead>
+
+<tbody>
+  <% @location.each do |location| %>
+    <tr>
+      <td><%= link_to(location.name, location) %></td>
+      <td><%= location.name %></td>
+      <td><%= location.distance %></td>
+      <td><%= location.date %></td>
+
+    </tr>
+  <% end %>
+</tbody>
+
+</table>
+
+</div>
+<form>
+<div class="div2center" align="center">
+
+<h1>Filter</h1>
+
+<label for="startat">Start at</label>
+<input type="date" name="start_at">
+<label for="endat">End at</label>
+<input type="date" name="end_at">
+<label for="startkm">Start km</label>
+<input type="number" name="start_km">
+<label for="endkm">End km</label>
+<input type="number" name="end_km">
+
+</div>
+	<input type="button" name="result" value="Result">
+
+</form>
+<div class="div3center" align="center">
+
+
+<h1>Result</h1>
+
+
+
+<table id="result" border="1px solid" align="center" style="width: 200px height: 30px">
+	<tr>
+		<th> Location</th>
+		<th>Date</th>
+		<th>Start km</th>
+		<th>End km</th>
+
+	</tr>
+<%= filter_location %>
+
+  <% @location.each do |location| %>
+
+	<tr>
+<td><%=location.name %></td>
+<td><%= location.date%></td>
+<td><%= location.start_km%></td>
+<td><%= location.end_km%></td>
+
+	</tr>
+
+<% end %>
+</table>
+
+</div>

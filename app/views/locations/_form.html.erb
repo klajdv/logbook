@@ -1,0 +1,7 @@
+<%= simple_form_for @location do |f| %>
+  <%= f.input :name, label: 'Location Name please', error: 'Location name is mandatory, please specify one' %>
+  <%= f.input :distance,placeholder:'km' %>
+    <%= f.input :date,placeholder:'01.01.2020' %>
+
+  <%= f.submit 'Add' %>
+<% end %>

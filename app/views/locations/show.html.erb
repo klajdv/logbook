@@ -1,0 +1,18 @@
+<h1>show</h1>
+
+
+<table border="2px">
+	<tr>
+		<th>Name</th>
+		<th>Distance</th>
+	</tr>
+	<tr>
+		<td><%= @location.name %></td>
+		<td align="center"><%= @location.distance %> km</td>
+
+	</tr>
+
+</table>
+
+<%= link_to "Back", root_path %>
+<%= link_to "Delete" ,  root_path, method: :delete, data: {confirm:"are you sure?"} %>
