@@ -1,0 +1,9 @@
+<%= simple_form_for @location do |f| %>
+  <%= f.input :start_at, label: , error: '' %>
+  <%= f.input :end_at,placeholder:'date' %>
+    <%= f.input :startkm,placeholder:'km' %>
+        <%= f.input :endkm,placeholder:'km' %>
+
+
+  <%= f.submit 'show' %>
+<% end %>

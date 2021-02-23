@@ -1,0 +1,26 @@
+<h1>Result</h1>
+
+<table id="result" border="1px solid" align="center" style="width: 200px height: 30px">
+	<tr>
+		<th> Location</th>
+		<th>Date</th>
+		<th>Start km</th>
+		<th>End km</th>
+
+	</tr>
+
+	<% startD =	0 %>
+	<% endD = 0 %>
+	<% @location.each do |logbook| %>
+	<% endD = startD + logbook.distance %>
+		<tr>
+			<td><%= logbook.name %></td>
+			<td><%= logbook.date%></td>
+			<td><%= startD %></td>
+			<td><%= endD %></td>
+		</tr>
+	<% startD = endD %>
+	<% end %>
+</table>
+
+<h3>Total distance traveled = <%= endD %> km</h3>
